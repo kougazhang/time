@@ -1,3 +1,3 @@
-module go.upyun.com/zhao.zhang/time
+module github.com/kougazhang/time
 
 go 1.19
