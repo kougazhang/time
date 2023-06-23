@@ -5,6 +5,12 @@ import (
 	"time"
 )
 
+// Date wraps time.Time.Date()
+func Date(t time.Time) time.Time {
+	year, month, day := t.Date()
+	return time.Date(year, month, day, 0, 0, 0, 0, time.Local)
+}
+
 func ParseDuration(s string) (time.Duration, error) {
 	orig := s
 	var d uint64
