@@ -2,8 +2,8 @@ commit: format test
 	git add -A .
 	git commit -m "$(info)"
 	git push origin master
-list-tag:
-	git tag -l
+cur:
+	git tag -l|sort -r|head -n1
 tag:
 	git tag $(tag)
 	git push origin $(tag)

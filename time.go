@@ -5,6 +5,15 @@ import (
 	"time"
 )
 
+// UnitDigitOfMinute calculates the units digit of the time
+func UnitDigitOfMinute(t time.Time) int {
+	return unitDigit(t.Minute())
+}
+
+func unitDigit(n int) int {
+	return n - n/10*10
+}
+
 // Date wraps time.Time.Date()
 func Date(t time.Time) time.Time {
 	year, month, day := t.Date()
