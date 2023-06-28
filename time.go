@@ -5,6 +5,23 @@ import (
 	"time"
 )
 
+func IsOnFiveMinutes(t time.Time) bool {
+	return t.Second() == 0 && t.Minute()%5 == 0
+}
+
+// OnFiveMinutes returns the unit digit of minute is 5 or 0.
+func OnFiveMinutes(t time.Time) time.Time {
+	seconds := time.Duration(t.Second()) * time.Second
+	minutes := time.Duration(t.Minute()%5) * time.Minute
+	return t.Add(-(seconds + minutes))
+}
+
+// OnMinute returns the seconds of the time is zero
+func OnMinute(t time.Time) time.Time {
+	seconds := time.Duration(t.Second()) * time.Second
+	return t.Add(-seconds)
+}
+
 // UnitDigitOfMinute calculates the units digit of the time
 func UnitDigitOfMinute(t time.Time) int {
 	return unitDigit(t.Minute())
