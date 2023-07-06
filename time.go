@@ -5,6 +5,10 @@ import (
 	"time"
 )
 
+func IsMidnight(tm time.Time) bool {
+	return tm.Hour() == 0 && tm.Minute() == 0 && tm.Second() == 0
+}
+
 func IsOnFiveMinutes(t time.Time) bool {
 	return t.Nanosecond() == 0 && t.Second() == 0 && t.Minute()%5 == 0
 }
